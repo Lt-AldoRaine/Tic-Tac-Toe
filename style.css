@@ -1,0 +1,128 @@
+:root {
+    --spacing-md: 20px;
+    --spacing-lg: 70px;
+    --square-width: 150px;
+}
+
+*, ::before, ::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    display: grid;
+    gap: var(--spacing-md);
+    grid-template-areas: 
+    "player-menu"
+    "board"
+    "reset";
+    justify-items: center;
+}
+
+/* board */
+
+.board-container {
+    display: grid;
+    grid-template: repeat(3, var(--square-width)) / repeat(3, 150px);
+    grid-area: board;
+}
+
+.board-square {
+    border: solid 2px black;
+    font-size: calc(var(--square-width) * 0.9);
+    cursor: pointer;
+    background-color: white;
+}
+
+.board-square:first-child,
+.board-square:nth-child(2),
+.board-square:nth-child(3) {
+    border-top: none;
+}
+
+.board-square:nth-child(3n + 1) {
+    border-left: none;
+}
+
+.board-square:nth-child(3n + 3) {
+    border-right: none;
+}
+
+.board-square:last-child,
+.board-square:nth-child(8),
+.board-square:nth-child(7) {
+    border-bottom: none;
+}
+
+.hover {
+    opacity: 0.4;
+}
+
+
+/* board */
+
+.reset {
+    grid-area: reset;
+}
+
+.reset-board {
+    color: #ECEFF4;
+    font-size: 2rem;
+    font-weight: bold;
+    width: 300px;
+    height: 100px;
+    margin-top: var(--spacing-lg);
+    border: none;
+    border-radius: 20px;
+    background-color: rgb(255, 0, 0);
+}
+
+.player-menu {
+    grid-area: player-menu;
+    width: 100vw;
+    padding: 20px;
+    border-radius: 15px;
+    border: none;
+    background-color: #ECEFF4;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    gap: var(--spacing-md);
+}
+
+.player-menu > div {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-lg);
+}
+
+.player-menu > h2 {
+    font-size: 2.5rem;
+}
+
+.player-select {
+    width: 100px;
+    height: 100px;
+    font-size: 4rem;
+    font-weight: bold;
+    border-radius: 12px;
+    border: none;
+    background-color:lightcoral;
+    cursor: pointer;
+}
+
+.player-select:hover {
+    transform: scale(1.2);
+}
+
+
+.active {
+    border: solid 1px black;
+}
