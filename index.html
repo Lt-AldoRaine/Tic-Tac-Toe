@@ -4,18 +4,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./style.css">
     <script src="./main.js" defer></script>
     <title>Tic Tac Toe</title>
 </head>
 <body>
-    <div class="container">
+    <div class="content">
         <div class="player-menu" id="player-menu">
-            <h2>Select Sign</h2>
-            <div>
-                <button class="player-select x"> X </button>
-                <button class="player-select o"> O </button>
+            <div class="title">
+                <h2>Tic-Tac-Toe</h2>
             </div>
+            <div>
+                <div class="current-turn">
+                    <h2>Turn: </h2>
+                    <h2 id="turn">X</h2>
+                </div>
+            </div>
+            <button class="reset-board">
+                <img src="./img/restart.svg">
+            </button>
         </div>
         <div class="board-container" id="board-container">
             <button class="board-square" data-square="0"></button>
@@ -28,8 +36,8 @@
             <button class="board-square" data-square="7"></button>
             <button class="board-square" data-square="8"></button>
         </div>
-        <div class="reset" id="reset">
-            <button class="reset-board">Reset</button>
+        <div class="winner-container">
+            <h2 id="winner"></h2>
         </div>
     </div>    
 </body>
