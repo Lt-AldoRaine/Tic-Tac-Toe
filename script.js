@@ -61,6 +61,7 @@ const GameController = (() => {
     if (checkWin(index)) {
       gameOver = true;
       DisplayController.displayWinner(getCurrentPlayer());
+      console.log(`${getCurrentPlayer()} has won`);
       return;
     }
     if (turn === 9) {
